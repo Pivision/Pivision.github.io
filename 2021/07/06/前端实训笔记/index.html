@@ -19,12 +19,12 @@
         <meta name="keywords" content="hexo,hexo-theme,hexo-blog">
     
     <meta name="description" content="">
-    <meta name="description" content="DAY 01前端发展史HTML, CSS 标准 1994 年 W3C 成立。它推行的主要规范有 HTML，CSS，XML，XHTML 和 DOM 2008 年 H5 第一个草案正式发布。H5 是集 html, css, js, http 等所有最新技术，是一个漫长的过程">
+    <meta name="description" content="本次实训期间的前端笔记，在此记录以便日后浏览。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="前端实训笔记">
 <meta property="og:url" content="https://www.vare.top/2021/07/06/%E5%89%8D%E7%AB%AF%E5%AE%9E%E8%AE%AD%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="404">
-<meta property="og:description" content="DAY 01前端发展史HTML, CSS 标准 1994 年 W3C 成立。它推行的主要规范有 HTML，CSS，XML，XHTML 和 DOM 2008 年 H5 第一个草案正式发布。H5 是集 html, css, js, http 等所有最新技术，是一个漫长的过程">
+<meta property="og:description" content="本次实训期间的前端笔记，在此记录以便日后浏览。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/8173669-6989004df3bc4e68.jpeg">
 <meta property="og:image" content="http://image.bubuko.com/info/201811/20181103165229119220.png">
@@ -501,12 +501,13 @@
             <div class="container container-unloaded">
                 <main class="main post-page">
     <article class="article-entry">
-        <h2 id="DAY-01"><a href="#DAY-01" class="headerlink" title="DAY 01"></a>DAY 01</h2><h3 id="前端发展史"><a href="#前端发展史" class="headerlink" title="前端发展史"></a>前端发展史</h3><h4 id="HTML-CSS-标准"><a href="#HTML-CSS-标准" class="headerlink" title="HTML, CSS 标准"></a>HTML, CSS 标准</h4><ul>
+        <p>本次实训期间的前端笔记，在此记录以便日后浏览。</p>
+<span id="more"></span>
+
+<h2 id="DAY-01"><a href="#DAY-01" class="headerlink" title="DAY 01"></a>DAY 01</h2><h3 id="前端发展史"><a href="#前端发展史" class="headerlink" title="前端发展史"></a>前端发展史</h3><h4 id="HTML-CSS-标准"><a href="#HTML-CSS-标准" class="headerlink" title="HTML, CSS 标准"></a>HTML, CSS 标准</h4><ul>
 <li>1994 年 W3C 成立。它推行的<strong>主要规范有 HTML，CSS，XML，XHTML 和 DOM</strong></li>
 <li>2008 年 H5 第一个草案正式发布。<strong>H5 是集 html, css, js, http 等所有最新技术，是一个漫长的过程</strong></li>
 </ul>
-<span id="more"></span>
-
 <h4 id="JS-标准"><a href="#JS-标准" class="headerlink" title="JS 标准"></a>JS 标准</h4><ul>
 <li><p>ECMAScript 是 JavaScript 语言的国际标准</p>
 </li>
@@ -826,7 +827,7 @@
 <ul>
 <li><code>&#123;&#123; message &#125;&#125;</code>：将数据解析为纯文本，不能输出真正的 html，在页面加载时显示 ，所以通常使用<code>v-html</code>和<code>v-text</code>代替，且花括号方式在以后可能被取消</li>
 <li><code>v-html=&quot;html&quot;</code>：输出真正的 html</li>
-<li><code>v-text=&quot;text&quot;</code>：将数据解析为纯文本，不能输出真正的 html，与花括号的区别是在页面加载时不显示<code> &#123;&#123;&nbsp;&#125;&#125;</code></li>
+<li><code>v-text=&quot;text&quot;</code>：将数据解析为纯文本，不能输出真正的 html，与花括号的区别是在页面加载时不显示 </li>
 </ul>
 <h3 id="v-key"><a href="#v-key" class="headerlink" title="v-key"></a>v-key</h3><h4 id="01-v-for中的key（问题导入）"><a href="#01-v-for中的key（问题导入）" class="headerlink" title="01-v-for中的key（问题导入）"></a>01-v-for中的key（问题导入）</h4><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;app&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">v-for</span>=<span class="string">&quot;(item, index) in arr&quot;</span>&gt;</span><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">&quot;checkbox&quot;</span>&gt;</span>&#123;&#123;item&#125;&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">&quot;add&quot;</span>&gt;</span>添加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://cdn.jsdelivr.net/npm/vue/dist/vue.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">new</span> Vue(&#123;</span></span><br><span class="line"><span class="javascript">        <span class="attr">el</span>: <span class="string">&quot;##app&quot;</span>,</span></span><br><span class="line"><span class="javascript">        <span class="attr">data</span>: &#123;</span></span><br><span class="line"><span class="javascript">            <span class="attr">arr</span>: [<span class="string">&quot;cat&quot;</span>, <span class="string">&quot;dog&quot;</span>]</span></span><br><span class="line"><span class="javascript">        &#125;,</span></span><br><span class="line"><span class="javascript">        <span class="attr">methods</span>: &#123;</span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="title">add</span>(<span class="params"></span>)</span> &#123;</span></span><br><span class="line"><span class="javascript">                <span class="built_in">this</span>.arr.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">&#x27;horse&#x27;</span>)</span></span><br><span class="line"><span class="javascript">            &#125;</span></span><br><span class="line"><span class="javascript">        &#125;</span></span><br><span class="line"><span class="javascript">    &#125;);</span></span><br><span class="line"><span class="javascript"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
@@ -1453,8 +1454,6 @@
         
         
         
-        
-        
     
     
     
@@ -1632,19 +1631,14 @@
                 学习
             </span>
         
-            <span class="sidebar-tag-name" data-tags="生活">
+            <span class="sidebar-tag-name" data-tags="PSVita">
                 <span class="iconfont-archer">&#xe606;</span>
-                生活
+                PSVita
             </span>
         
-            <span class="sidebar-tag-name" data-tags="动漫">
+            <span class="sidebar-tag-name" data-tags="破解">
                 <span class="iconfont-archer">&#xe606;</span>
-                动漫
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="京阿尼">
-                <span class="iconfont-archer">&#xe606;</span>
-                京阿尼
+                破解
             </span>
         
             <span class="sidebar-tag-name" data-tags="Windows">
@@ -1662,24 +1656,24 @@
                 Telegram
             </span>
         
+            <span class="sidebar-tag-name" data-tags="生活">
+                <span class="iconfont-archer">&#xe606;</span>
+                生活
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="动漫">
+                <span class="iconfont-archer">&#xe606;</span>
+                动漫
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="京阿尼">
+                <span class="iconfont-archer">&#xe606;</span>
+                京阿尼
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="生日">
                 <span class="iconfont-archer">&#xe606;</span>
                 生日
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="网站">
-                <span class="iconfont-archer">&#xe606;</span>
-                网站
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="PSVita">
-                <span class="iconfont-archer">&#xe606;</span>
-                PSVita
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="破解">
-                <span class="iconfont-archer">&#xe606;</span>
-                破解
             </span>
         
             <span class="sidebar-tag-name" data-tags="真香">
@@ -1692,9 +1686,9 @@
                 我不当人了
             </span>
         
-            <span class="sidebar-tag-name" data-tags="前端">
+            <span class="sidebar-tag-name" data-tags="网站">
                 <span class="iconfont-archer">&#xe606;</span>
-                前端
+                网站
             </span>
         
             <span class="sidebar-tag-name" data-tags="音乐">
@@ -1717,19 +1711,24 @@
                 红十字会
             </span>
         
+            <span class="sidebar-tag-name" data-tags="前端">
+                <span class="iconfont-archer">&#xe606;</span>
+                前端
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="缅怀">
                 <span class="iconfont-archer">&#xe606;</span>
                 缅怀
             </span>
         
-            <span class="sidebar-tag-name" data-tags="阅读">
-                <span class="iconfont-archer">&#xe606;</span>
-                阅读
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="网络">
                 <span class="iconfont-archer">&#xe606;</span>
                 网络
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="阅读">
+                <span class="iconfont-archer">&#xe606;</span>
+                阅读
             </span>
         
     </div>
@@ -1748,14 +1747,14 @@
             探索
         </span>
     
-        <span class="sidebar-category-name" data-categories="杂记">
-            <span class="iconfont-archer">&#xe60a;</span>
-            杂记
-        </span>
-    
         <span class="sidebar-category-name" data-categories="资源">
             <span class="iconfont-archer">&#xe60a;</span>
             资源
+        </span>
+    
+        <span class="sidebar-category-name" data-categories="杂记">
+            <span class="iconfont-archer">&#xe60a;</span>
+            杂记
         </span>
     
         <span class="sidebar-category-name" data-categories="娱乐">
