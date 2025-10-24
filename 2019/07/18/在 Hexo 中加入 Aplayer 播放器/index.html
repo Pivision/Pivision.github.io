@@ -215,7 +215,7 @@
     
     <!-- 谷歌统计  -->
     
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.2"></head>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"></script>
     <script type="text/javascript">
@@ -504,7 +504,7 @@
 <h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><p>进入 <a target="_blank" rel="noopener" href="https://github.com/MoePlayer/APlayer">Aplayer</a> 网页，下载 GitHub 压缩包并解压，将其中的 dist 文件夹移动到<code>\themes\你的主题\source</code>目录下</p>
 <h2 id="修改"><a href="#修改" class="headerlink" title="修改"></a>修改</h2><ol>
 <li><p>在 dist 目录中，新建<code>music.js</code>文件，并将如下代码粘贴进去</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ap = <span class="keyword">new</span> APlayer(&#123;</span><br><span class="line">    <span class="attr">container</span>: <span class="built_in">document</span>.getElementById(<span class="string">&#x27;aplayer&#x27;</span>),</span><br><span class="line">    <span class="attr">fixed</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">autoplay</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">audio</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;心做し&quot;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;papiyon&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=29747157.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p1.music.126.net/DeLlqBZXRBBrVPw_ahUl5g==/3239161256372551.jpg&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;aLIEz&#x27;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;mizuki / SawanoHiroyuki[nZk]&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=29307041.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p2.music.126.net/FahHKWzpgA5t9hIaj4kbBQ==/6649846324993045.jpg&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;LOSER&#x27;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;米津玄師&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=512359195.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p2.music.126.net/A-VUmkAaUVQ88iXBrsbQ1A==/109951163561900568.jpg&#x27;</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> ap = <span class="keyword">new</span> <span class="title class_">APlayer</span>(&#123;</span><br><span class="line">    <span class="attr">container</span>: <span class="variable language_">document</span>.<span class="title function_">getElementById</span>(<span class="string">&#x27;aplayer&#x27;</span>),</span><br><span class="line">    <span class="attr">fixed</span>: <span class="literal">true</span>,</span><br><span class="line">    <span class="attr">autoplay</span>: <span class="literal">false</span>,</span><br><span class="line">    <span class="attr">audio</span>: [</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&quot;心做し&quot;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;papiyon&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=29747157.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p1.music.126.net/DeLlqBZXRBBrVPw_ahUl5g==/3239161256372551.jpg&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;aLIEz&#x27;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;mizuki / SawanoHiroyuki[nZk]&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=29307041.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p2.music.126.net/FahHKWzpgA5t9hIaj4kbBQ==/6649846324993045.jpg&#x27;</span>,</span><br><span class="line">      &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">        <span class="attr">name</span>: <span class="string">&#x27;LOSER&#x27;</span>,</span><br><span class="line">        <span class="attr">artist</span>: <span class="string">&#x27;米津玄師&#x27;</span>,</span><br><span class="line">        <span class="attr">url</span>: <span class="string">&#x27;http://music.163.com/song/media/outer/url?id=512359195.mp3&#x27;</span>,</span><br><span class="line">        <span class="attr">cover</span>: <span class="string">&#x27;http://p2.music.126.net/A-VUmkAaUVQ88iXBrsbQ1A==/109951163561900568.jpg&#x27;</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></li>
 <li><p>在<code>\themes\你的主题\layout\layout.ejs</code>文件中，新增如下代码</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 音频播放 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attr">href</span>=<span class="string">&quot;/dist/APlayer.min.css&quot;</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;aplayer&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/dist/APlayer.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;/dist/music.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></li>
 </ol>
@@ -877,6 +877,14 @@
         
         
         
+        
+        
+        
+        
+        
+        
+        
+        
     
     
     
@@ -1029,6 +1037,16 @@
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
         
+            <span class="sidebar-tag-name" data-tags="PSVita">
+                <span class="iconfont-archer">&#xe606;</span>
+                PSVita
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="破解">
+                <span class="iconfont-archer">&#xe606;</span>
+                破解
+            </span>
+        
             <span class="sidebar-tag-name" data-tags="前端">
                 <span class="iconfont-archer">&#xe606;</span>
                 前端
@@ -1069,16 +1087,6 @@
                 京阿尼
             </span>
         
-            <span class="sidebar-tag-name" data-tags="PSVita">
-                <span class="iconfont-archer">&#xe606;</span>
-                PSVita
-            </span>
-        
-            <span class="sidebar-tag-name" data-tags="破解">
-                <span class="iconfont-archer">&#xe606;</span>
-                破解
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="生日">
                 <span class="iconfont-archer">&#xe606;</span>
                 生日
@@ -1089,11 +1097,6 @@
                 网站
             </span>
         
-            <span class="sidebar-tag-name" data-tags="音乐">
-                <span class="iconfont-archer">&#xe606;</span>
-                音乐
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="真香">
                 <span class="iconfont-archer">&#xe606;</span>
                 真香
@@ -1102,6 +1105,11 @@
             <span class="sidebar-tag-name" data-tags="我不当人了">
                 <span class="iconfont-archer">&#xe606;</span>
                 我不当人了
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="音乐">
+                <span class="iconfont-archer">&#xe606;</span>
+                音乐
             </span>
         
             <span class="sidebar-tag-name" data-tags="疫情">
@@ -1124,14 +1132,14 @@
                 缅怀
             </span>
         
-            <span class="sidebar-tag-name" data-tags="阅读">
-                <span class="iconfont-archer">&#xe606;</span>
-                阅读
-            </span>
-        
             <span class="sidebar-tag-name" data-tags="网络">
                 <span class="iconfont-archer">&#xe606;</span>
                 网络
+            </span>
+        
+            <span class="sidebar-tag-name" data-tags="阅读">
+                <span class="iconfont-archer">&#xe606;</span>
+                阅读
             </span>
         
     </div>
