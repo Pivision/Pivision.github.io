@@ -193,10 +193,26 @@
     }
 </style>
 
+    <!-- <script>
+    // 立即执行主题检测
+    (function() {
+        var preferredThemeMode = localStorage.preferredThemeMode;
+        if (!preferredThemeMode) {
+            preferredThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            localStorage.preferredThemeMode = preferredThemeMode;
+        }
+        
+        // 如果偏好浅色，立即禁用暗色CSS
+        if (preferredThemeMode === 'light') {
+            // 存储标志，供后续JS使用
+            window.shouldDisableDarkCSS = true;
+        }
+    })();
+    </script> -->
     <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdmirror.com/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link id="stylesheet-base" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link id="stylesheet-mobile" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
-    <link id="stylesheet-theme-dark" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/dark.css" as="style" onload="if(localStorage.preferredThemeMode==='dark'){this.onload=null;this.rel='stylesheet'}" fetchpriority="low"">
+    <link id="stylesheet-theme-dark" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/dark.css" as="style" onload="if(localStorage.preferredThemeMode === 'dark' || (!localStorage.preferredThemeMode && window.matchMedia('(prefers-color-scheme: dark)').matches)){this.onload=null; this.rel='stylesheet'}" fetchpriority="low"">
     <link rel="preload" href="https://cdn.jsdmirror.com/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/scripts/main.js" as="script">
     <link rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/font/Oswald-Regular.ttf" as="font" crossorigin>
@@ -463,8 +479,8 @@
         <div class="license-wrapper">
             <p>原文作者：<a href="https://www.vare.top">404</a>
             <p>原文链接：<a href="https://www.vare.top/post/2019071563439041/">https://www.vare.top/post/2019071563439041/</a>
-            <p>发表日期：<a href="https://www.vare.top/post/2019071563439041/">七月 18日 2019, 4:37:21 下午</a>
-            <p>更新日期：<a href="https://www.vare.top/post/2019071563439041/">七月 18日 2019, 4:37:21 下午</a>
+            <p>发表日期：<a href="https://www.vare.top/post/2019071563439041/">July 18th 2019, 4:37:21 pm</a>
+            <p>更新日期：<a href="https://www.vare.top/post/2019071563439041/">July 18th 2019, 4:37:21 pm</a>
             <p>版权声明：本文采用<a rel="license noopener" target="_blank" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     <!-- paginator -->
@@ -662,17 +678,13 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 学习
             </span>
-            <span class="sidebar-tag-name" data-tags="生活">
+            <span class="sidebar-tag-name" data-tags="PSVita">
                 <span class="iconfont-archer">&#xe606;</span>
-                生活
+                PSVita
             </span>
-            <span class="sidebar-tag-name" data-tags="动漫">
+            <span class="sidebar-tag-name" data-tags="破解">
                 <span class="iconfont-archer">&#xe606;</span>
-                动漫
-            </span>
-            <span class="sidebar-tag-name" data-tags="京阿尼">
-                <span class="iconfont-archer">&#xe606;</span>
-                京阿尼
+                破解
             </span>
             <span class="sidebar-tag-name" data-tags="Windows">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -686,6 +698,18 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 Telegram
             </span>
+            <span class="sidebar-tag-name" data-tags="生活">
+                <span class="iconfont-archer">&#xe606;</span>
+                生活
+            </span>
+            <span class="sidebar-tag-name" data-tags="动漫">
+                <span class="iconfont-archer">&#xe606;</span>
+                动漫
+            </span>
+            <span class="sidebar-tag-name" data-tags="京阿尼">
+                <span class="iconfont-archer">&#xe606;</span>
+                京阿尼
+            </span>
             <span class="sidebar-tag-name" data-tags="生日">
                 <span class="iconfont-archer">&#xe606;</span>
                 生日
@@ -693,14 +717,6 @@
             <span class="sidebar-tag-name" data-tags="网站">
                 <span class="iconfont-archer">&#xe606;</span>
                 网站
-            </span>
-            <span class="sidebar-tag-name" data-tags="PSVita">
-                <span class="iconfont-archer">&#xe606;</span>
-                PSVita
-            </span>
-            <span class="sidebar-tag-name" data-tags="破解">
-                <span class="iconfont-archer">&#xe606;</span>
-                破解
             </span>
             <span class="sidebar-tag-name" data-tags="真香">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -734,13 +750,13 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 二次元
             </span>
-            <span class="sidebar-tag-name" data-tags="阅读">
-                <span class="iconfont-archer">&#xe606;</span>
-                阅读
-            </span>
             <span class="sidebar-tag-name" data-tags="网络">
                 <span class="iconfont-archer">&#xe606;</span>
                 网络
+            </span>
+            <span class="sidebar-tag-name" data-tags="阅读">
+                <span class="iconfont-archer">&#xe606;</span>
+                阅读
             </span>
     </div>
     <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
@@ -756,13 +772,13 @@
             <span class="iconfont-archer">&#xe60a;</span>
             探索
         </span>
-        <span class="sidebar-category-name" data-categories="杂记">
-            <span class="iconfont-archer">&#xe60a;</span>
-            杂记
-        </span>
         <span class="sidebar-category-name" data-categories="资源">
             <span class="iconfont-archer">&#xe60a;</span>
             资源
+        </span>
+        <span class="sidebar-category-name" data-categories="杂记">
+            <span class="iconfont-archer">&#xe60a;</span>
+            杂记
         </span>
         <span class="sidebar-category-name" data-categories="娱乐">
             <span class="iconfont-archer">&#xe60a;</span>
