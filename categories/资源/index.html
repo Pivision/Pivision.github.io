@@ -187,10 +187,26 @@
     }
 </style>
 
+    <!-- <script>
+    // 立即执行主题检测
+    (function() {
+        var preferredThemeMode = localStorage.preferredThemeMode;
+        if (!preferredThemeMode) {
+            preferredThemeMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            localStorage.preferredThemeMode = preferredThemeMode;
+        }
+        
+        // 如果偏好浅色，立即禁用暗色CSS
+        if (preferredThemeMode === 'light') {
+            // 存储标志，供后续JS使用
+            window.shouldDisableDarkCSS = true;
+        }
+    })();
+    </script> -->
     <link id="stylesheet-fancybox" rel="preload" href="https://cdn.jsdmirror.com/npm/@fancyapps/ui@5.0.36/dist/fancybox/fancybox.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link id="stylesheet-base" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link id="stylesheet-mobile" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/mobile.css" as="style" onload="this.onload=null;this.rel='stylesheet';this.media='screen and (max-width: 960px)'">
-    <link id="stylesheet-theme-dark" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/dark.css" as="style" onload="this.onload=null; this.rel='stylesheet'" fetchpriority="low"">
+    <link id="stylesheet-theme-dark" rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/css/dark.css" as="style" onload="if(localStorage.preferredThemeMode === 'dark'){this.onload=null; this.rel='stylesheet'}" fetchpriority="low"">
     <link rel="preload" href="https://cdn.jsdmirror.com/npm/jquery@3.6.0/dist/jquery.min.js" as="script">
     <link rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/scripts/main.js" as="script">
     <link rel="preload" href="https://cdn.jsdmirror.com/gh/Pivision/pivision.github.io@main/font/Oswald-Regular.ttf" as="font" crossorigin>
@@ -635,6 +651,10 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 生日
             </span>
+            <span class="sidebar-tag-name" data-tags="网站">
+                <span class="iconfont-archer">&#xe606;</span>
+                网站
+            </span>
             <span class="sidebar-tag-name" data-tags="真香">
                 <span class="iconfont-archer">&#xe606;</span>
                 真香
@@ -643,9 +663,9 @@
                 <span class="iconfont-archer">&#xe606;</span>
                 我不当人了
             </span>
-            <span class="sidebar-tag-name" data-tags="网站">
+            <span class="sidebar-tag-name" data-tags="音乐">
                 <span class="iconfont-archer">&#xe606;</span>
-                网站
+                音乐
             </span>
             <span class="sidebar-tag-name" data-tags="疫情">
                 <span class="iconfont-archer">&#xe606;</span>
@@ -670,10 +690,6 @@
             <span class="sidebar-tag-name" data-tags="阅读">
                 <span class="iconfont-archer">&#xe606;</span>
                 阅读
-            </span>
-            <span class="sidebar-tag-name" data-tags="音乐">
-                <span class="iconfont-archer">&#xe606;</span>
-                音乐
             </span>
             <span class="sidebar-tag-name" data-tags="网络">
                 <span class="iconfont-archer">&#xe606;</span>
