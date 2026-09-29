@@ -1,0 +1,67 @@
+name: cf-cache-purge-warmup
+run-name: Cloudflare Cache Purge & Warmup
+
+on:
+  workflow_run:
+    workflows: ["pages-build-deployment"]
+    types:
+      - completed
+
+jobs:
+  purge-and-warm:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - name: Purge Cloudflare Cache
+        uses: nathanvaughn/actions-cloudflare-purge@master
+        with:
+          cf_zone: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          cf_auth: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          hosts: |
+            www.vare.top
+      - name: Wait for cache purge
+        run: sleep 15
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install curl_cffi
+        run: pip install curl_cffi
+
+      - name: Warm up cache
+        env:
+          WARMER_KEY: ${{ secrets.WARMER_KEY }}
+        run: |
+          python - <<'EOF'
+          import os
+          import time
+          import random
+          from curl_cffi import requests
+          URLS = [
+              "https://www.vare.top/",
+          ]
+          HEADERS = {
+              "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+              "Accept-Language": "zh-CN,zh;q=0.9,en;q=0.8",
+          }
+          if os.environ.get("WARMER_KEY"):
+              HEADERS["X-Warmer-Key"] = os.environ["WARMER_KEY"]
+          success = fail = 0
+          total = len(URLS)
+          print(f"Start warm up, total {total} URLs")
+          for i, url in enumerate(URLS):
+              time.sleep(random.uniform(1, 2))
+              try:
+                  r = requests.get(url, headers=HEADERS, impersonate="chrome120", timeout=15)
+                  if r.status_code == 200:
+                      success += 1
+                  else:
+                      fail += 1
+                  print(f"{i+1}/{total} {r.status_code} {url}")
+              except Exception as e:
+                  fail += 1
+                  print(f"{i+1}/{total} ERR {url} - {e}")
+          print(f"Done. success={success} fail={fail}")
+          EOF
